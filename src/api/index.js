@@ -13,7 +13,7 @@ export function loadWeather(options) {
         ...options,
     };
     
-    console.log(queryString.stringify(realOptions));
+    // console.log(queryString.stringify(realOptions));
 
     return fetch(
         `${baseUrl}&${queryString.stringify(realOptions)}`

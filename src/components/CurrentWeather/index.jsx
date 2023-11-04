@@ -13,9 +13,9 @@ function CurrentWeather() {
     setIsFetching(true);
     loadWeather({ temperature_unit, windspeed_unit })
       .then((data) => {
+        setWeather(data);
         console.log(data);
-        // setWeather(data);
-        // console.log(weather);
+        console.log(weather);
       })
       .catch((err) => console.error(err))
       .finally(() => setIsFetching(false));
@@ -48,6 +48,7 @@ function CurrentWeather() {
         </label>
       </section>
       <div className={styles.loader}>{isFetching && <FadeLoader />}</div>
+      <div></div>
     </>
   );
 }
