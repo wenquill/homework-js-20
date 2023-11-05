@@ -47,20 +47,25 @@
 }
 
 .currWeatherUnit {
-    flex: 1 1 260px;
-    text-align: center;
-    padding: 20px;
-    background-color: #bd6060;
+  flex: 1 1 260px;
+  text-align: center;
+  padding: 20px;
+  background-color: #bd6060;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .weatherParams {
-    font-size: 23px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
