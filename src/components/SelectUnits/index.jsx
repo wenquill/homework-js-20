@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "./../CurrentWeather/CurrentWeather.module.css";
+import SelectUnit from "./SelectUnit";
 
-function SelectUnits ({windspeed_unit, temperature_unit, setWindspeedUnit, setTemperatureUnit}) {
-
+function SelectUnits({
+  windspeed_unit,
+  temperature_unit,
+  setWindspeedUnit,
+  setTemperatureUnit,
+}) {
   function selectTempUnitHandler({ target: { value } }) {
     setTemperatureUnit(value);
   }
@@ -13,28 +18,20 @@ function SelectUnits ({windspeed_unit, temperature_unit, setWindspeedUnit, setTe
 
   return (
     <section className={styles.selectUnit}>
-      <label className={styles.label}>
-        <p className={styles.unitName}>Temperature unit</p>
-        <select
-          className={styles.select}
-          value={temperature_unit}
-          onChange={selectTempUnitHandler}
-        >
-          <option value="fahrenheit">*F</option>
-          <option value="celsius">*C</option>
-        </select>
-      </label>
-      <label className={styles.label}>
-        <p className={styles.unitName}>Windspeed unit</p>
-        <select
-          className={styles.select}
-          value={windspeed_unit}
-          onChange={selectWindUnitHandler}
-        >
-          <option value="kmh">km/h</option>
-          <option value="ms">m/s</option>
-        </select>
-      </label>
+      <SelectUnit
+        selectUnitHandler={selectTempUnitHandler}
+        unit={temperature_unit}
+        value1="fahrenheit"
+        value2="celsius"
+        title="Temperature unit"
+      />
+      <SelectUnit
+        selectUnitHandler={selectWindUnitHandler}
+        unit={windspeed_unit}
+        value1="kmh"
+        value2="ms"
+        title="Windspeed unit"
+      />
     </section>
   );
 }
